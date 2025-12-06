@@ -1,0 +1,37 @@
+dataset,train_size,trial,model,best_params,cv_accuracy,train_accuracy,test_accuracy
+EEG_Eye_State,0.2,0,LogisticRegression,{'clf__C': 10},0.639858653311074,0.6435246995994659,0.6400200267022697
+EEG_Eye_State,0.2,0,SVM_RBF,"{'clf__C': 10, 'clf__gamma': 1}",0.931906510851419,1.0,0.9368324432576769
+EEG_Eye_State,0.2,0,RandomForest,"{'clf__max_depth': None, 'clf__min_samples_leaf': 1, 'clf__n_estimators': 300}",0.8718297161936561,1.0,0.8732476635514018
+EEG_Eye_State,0.2,0,MLP,"{'clf__alpha': 0.0001, 'clf__hidden_layer_sizes': (50, 50), 'clf__learning_rate_init': 0.01}",0.9088720089037284,0.9823097463284379,0.9181408544726302
+EEG_Eye_State,0.2,1,LogisticRegression,{'clf__C': 10},0.6582070116861436,0.6622162883845126,0.6388518024032043
+EEG_Eye_State,0.2,1,SVM_RBF,"{'clf__C': 100, 'clf__gamma': 1}",0.9325781858653311,1.0,0.9408377837116155
+EEG_Eye_State,0.2,1,RandomForest,"{'clf__max_depth': 20, 'clf__min_samples_leaf': 1, 'clf__n_estimators': 300}",0.8721691708402893,1.0,0.8679072096128171
+EEG_Eye_State,0.2,1,MLP,"{'clf__alpha': 0.001, 'clf__hidden_layer_sizes': (50, 50), 'clf__learning_rate_init': 0.01}",0.9118892598775737,0.9749666221628839,0.9172229639519359
+EEG_Eye_State,0.2,2,LogisticRegression,{'clf__C': 0.1},0.6365225375626044,0.6391855807743658,0.6413551401869159
+EEG_Eye_State,0.2,2,SVM_RBF,"{'clf__C': 10, 'clf__gamma': 1}",0.9288992765720645,1.0,0.932743658210948
+EEG_Eye_State,0.2,2,RandomForest,"{'clf__max_depth': None, 'clf__min_samples_leaf': 1, 'clf__n_estimators': 300}",0.8725025041736227,1.0,0.8779205607476636
+EEG_Eye_State,0.2,2,MLP,"{'clf__alpha': 0.001, 'clf__hidden_layer_sizes': (50, 50), 'clf__learning_rate_init': 0.01}",0.9065392320534225,0.9656208277703605,0.9117990654205608
+EEG_Eye_State,0.5,0,LogisticRegression,{'clf__C': 10},0.6373831775700933,0.6417890520694259,0.6461949265687583
+EEG_Eye_State,0.5,0,SVM_RBF,"{'clf__C': 10, 'clf__gamma': 1}",0.9552736982643525,0.9970627503337783,0.9579439252336449
+EEG_Eye_State,0.5,0,RandomForest,"{'clf__max_depth': None, 'clf__min_samples_leaf': 1, 'clf__n_estimators': 300}",0.9058744993324434,1.0,0.920026702269693
+EEG_Eye_State,0.5,0,MLP,"{'clf__alpha': 0.0001, 'clf__hidden_layer_sizes': (50, 50), 'clf__learning_rate_init': 0.01}",0.9408544726301736,0.9878504672897196,0.9539385847797063
+EEG_Eye_State,0.5,1,LogisticRegression,{'clf__C': 100},0.6427236315086782,0.6467289719626168,0.6476635514018692
+EEG_Eye_State,0.5,1,SVM_RBF,"{'clf__C': 10, 'clf__gamma': 1}",0.9412550066755674,0.991588785046729,0.9415220293724966
+EEG_Eye_State,0.5,1,RandomForest,"{'clf__max_depth': None, 'clf__min_samples_leaf': 1, 'clf__n_estimators': 300}",0.9100133511348464,1.0,0.9152202937249666
+EEG_Eye_State,0.5,1,MLP,"{'clf__alpha': 0.001, 'clf__hidden_layer_sizes': (50, 50), 'clf__learning_rate_init': 0.01}",0.9236315086782376,0.957543391188251,0.9216288384512683
+EEG_Eye_State,0.5,2,LogisticRegression,{'clf__C': 100},0.6110814419225634,0.6149532710280374,0.6186915887850467
+EEG_Eye_State,0.5,2,SVM_RBF,"{'clf__C': 10, 'clf__gamma': 1}",0.9432576769025367,0.992656875834446,0.95086782376502
+EEG_Eye_State,0.5,2,RandomForest,"{'clf__max_depth': 20, 'clf__min_samples_leaf': 1, 'clf__n_estimators': 300}",0.9093457943925234,1.0,0.9132176234979973
+EEG_Eye_State,0.5,2,MLP,"{'clf__alpha': 0.0001, 'clf__hidden_layer_sizes': (50, 50), 'clf__learning_rate_init': 0.01}",0.929105473965287,0.9664886515353805,0.9327102803738317
+EEG_Eye_State,0.8,0,LogisticRegression,{'clf__C': 100},0.6194111935968932,0.6148197596795728,0.6191588785046729
+EEG_Eye_State,0.8,0,SVM_RBF,"{'clf__C': 100, 'clf__gamma': 1}",0.8876841042956449,0.9006174899866488,0.869826435246996
+EEG_Eye_State,0.8,0,RandomForest,"{'clf__max_depth': None, 'clf__min_samples_leaf': 1, 'clf__n_estimators': 300}",0.9251500031689585,1.0,0.9302403204272364
+EEG_Eye_State,0.8,0,MLP,"{'clf__alpha': 0.001, 'clf__hidden_layer_sizes': (50, 50), 'clf__learning_rate_init': 0.01}",0.8739158157490966,0.9185580774365821,0.883177570093458
+EEG_Eye_State,0.8,1,LogisticRegression,{'clf__C': 100},0.640186989440752,0.6411882510013351,0.6345126835781041
+EEG_Eye_State,0.8,1,SVM_RBF,"{'clf__C': 100, 'clf__gamma': 1}",0.9113002619440133,0.9385847797062751,0.8898531375166889
+EEG_Eye_State,0.8,1,RandomForest,"{'clf__max_depth': None, 'clf__min_samples_leaf': 1, 'clf__n_estimators': 300}",0.9237320161609913,1.0,0.9299065420560748
+EEG_Eye_State,0.8,1,MLP,"{'clf__alpha': 0.001, 'clf__hidden_layer_sizes': (50, 50), 'clf__learning_rate_init': 0.01}",0.9007872249883861,0.9268190921228304,0.8841789052069426
+EEG_Eye_State,0.8,2,LogisticRegression,{'clf__C': 100},0.624331123420135,0.6334279038718291,0.62716955941255
+EEG_Eye_State,0.8,2,SVM_RBF,"{'clf__C': 10, 'clf__gamma': 1}",0.92806861386973,0.9606141522029372,0.928237650200267
+EEG_Eye_State,0.8,2,RandomForest,"{'clf__max_depth': None, 'clf__min_samples_leaf': 1, 'clf__n_estimators': 300}",0.9270687204303097,1.0,0.9382510013351135
+EEG_Eye_State,0.8,2,MLP,"{'clf__alpha': 0.0001, 'clf__hidden_layer_sizes': (50, 50), 'clf__learning_rate_init': 0.01}",0.9250655556507403,0.9521028037383178,0.9172229639519359
