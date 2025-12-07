@@ -1,17 +1,14 @@
-# COGS118A Final Project
-
+# README — COGS118A Final Project
 **A Comparative Evaluation of Machine Learning Classifiers on Biomedical EEG and Voice Datasets**  
 **Author:** Laurentia Liennart  
-**Course:** COGS 118A — Supervised Machine Learning Algorithms  
-University of California, San Diego
+**Course:** COGS 118A — Supervised Machine Learning Algorithms**  
+University of California San Diego
 
 ---
 
 ## **Overview**
 
-This repository contains the implementation, analysis, and report for a comparative study evaluating four supervised learning algorithms across three biomedical datasets. The project examines how Logistic Regression, SVM with RBF kernel, Random Forest, and Multi-Layer Perceptron generalize across datasets with differing nonlinear structure, noise levels, and sample sizes.
-
-Experiments were conducted in Python using scikit-learn, following an empirical evaluation design inspired by Caruana and Niculescu-Mizil (2006). Each classifier was tuned using grid search with 5-fold cross-validation, evaluated under multiple train/test splits, and repeated across three randomized trials to ensure robustness.
+This repository contains the implementation, analysis, and final report for a comparative study of four supervised learning classifiers evaluated on three biomedical datasets from the UCI Machine Learning Repository. The project investigates how Logistic Regression, Support Vector Machine with an RBF kernel, Random Forest, and Multi-Layer Perceptron generalize across datasets that differ in dimensionality, noise characteristics, and nonlinear structure. The study emphasizes reproducible experimental design, rigorous hyperparameter tuning, and cross-dataset comparison, following an empirical methodology modeled after Caruana and Niculescu-Mizil’s work on classifier evaluation.
 
 ---
 
@@ -40,7 +37,7 @@ COGS118A_Final_Project/
 ├── results/
 │   ├── eeg_eye_results_summary.csv
 │   ├── beed_results_summary.csv
-│   ├── parkinsons_results_summary.csv
+│   ├── pdcls_results_summary.csv
 │
 ├── data/
 │   └── README.md
@@ -55,80 +52,73 @@ COGS118A_Final_Project/
 
 ## **Datasets**
 
-Raw datasets are not included. They can be downloaded from the UCI Machine Learning Repository:
+Three datasets from the UCI Machine Learning Repository were used in this study. Each represents a distinct biomedical classification problem:
 
-* EEG Eye State: [https://archive.ics.uci.edu/dataset/264](https://archive.ics.uci.edu/dataset/264)
-* BEED Epilepsy Detection: [https://archive.ics.uci.edu/dataset/1134](https://archive.ics.uci.edu/dataset/1134)
-* Parkinson’s Disease Classification: [https://archive.ics.uci.edu/dataset/174](https://archive.ics.uci.edu/dataset/174)
+1. **EEG Eye State** — A large EEG dataset containing nearly 15,000 samples labeled as eye-open or eye-closed.
+2. **BEED Epilepsy Detection** — A mid-sized dataset of engineered statistical EEG features used to classify seizure activity.
+3. **Parkinson’s Disease Voice Dataset** — A small voice dataset with acoustic features designed to detect Parkinsonian dysphonia.
 
----
-
-## **Methods and Experimental Setup**
-
-Four classifiers were trained and tuned:
-
-* Logistic Regression
-* Support Vector Machine (RBF Kernel)
-* Random Forest Classifier
-* Multi-Layer Perceptron (Neural Network)
-
-All models were tuned using **5-fold cross-validation** within each training split.
-Data partitions: **20/80**, **50/50**, **80/20**, each repeated across **three random seeds**.
-Accuracy was used as the primary evaluation metric.
+Due to licensing and file size constraints, dataset files are not included in this repository. Users may download them directly from UCI and place them into the `data/` directory or upload them manually when running notebooks in Google Colab.
 
 ---
 
-## **Summary of Mean Test Accuracies (Across All Trials & Splits)**
+## **Methods**
 
-*These aggregated values are based on model rankings visible in the plots and summary tables.*
+This project evaluates four supervised learning algorithms—Logistic Regression, Support Vector Machine with RBF kernel, Random Forest, and Multi-Layer Perceptron—on each dataset using a consistent experimental framework. Each dataset was evaluated under three train/test partitions (20/80, 50/50, and 80/20) to study how classifier performance changes with varying amounts of training data. For every partition, each model underwent hyperparameter tuning using grid search with 5-fold cross-validation to identify the configuration achieving the highest validation accuracy.
 
-### **EEG Eye State Dataset**
-
-| Model               | Mean Test Accuracy |
-| ------------------- | ------------------ |
-| Logistic Regression | ~0.63              |
-| SVM (RBF Kernel)    | ~0.90–0.93         |
-| Random Forest       | ~0.92–0.94         |
-| MLP                 | ~0.88–0.92         |
+To ensure robustness, all experiments were repeated across three randomized trials per train/test split. Performance was assessed using classification accuracy, and additional statistics such as cross-validation accuracy and training accuracy were recorded for further analysis. Summary files containing the best hyperparameters and averaged results are located in the `results/` directory, while all visualizations were generated through dedicated notebooks and saved in the `plots/` directory. These plots illustrate dataset-specific trends, cross-dataset comparisons, and model behavior across training sizes.
 
 ---
 
-### **BEED Epilepsy Detection Dataset**
+## **Summary of Findings**
 
-| Model               | Mean Test Accuracy |
-| ------------------- | ------------------ |
-| Logistic Regression | ~0.90              |
-| SVM (RBF Kernel)    | ~0.96–0.98         |
-| Random Forest       | ~0.95–0.97         |
-| MLP                 | ~0.94–0.96         |
+Across datasets, nonlinear models consistently outperform Logistic Regression, demonstrating that biomedical features—such as EEG signals and dysphonia measures—often exhibit nonlinear relationships that cannot be captured by linear decision boundaries. On the EEG Eye State and BEED datasets, Support Vector Machines and Random Forests achieved the highest accuracies, often exceeding 0.90. MLP performed competitively but showed greater variability, particularly with smaller training sizes. Logistic Regression consistently produced the lowest accuracies, highlighting its limited capacity in modeling complex feature interactions.
+
+The Parkinson’s dataset exhibited greater variance in both cross-validation and test performance due to its small sample size, but SVM remained the strongest overall model, followed by Random Forest and MLP. Learning curves across all datasets showed that performance generally improved with larger training sizes for flexible models such as SVM and MLP, whereas Logistic Regression exhibited minimal gains. Cross-validation aligned closely with test accuracy for the EEG datasets, reflecting their relatively large sample sizes, while the Parkinson’s dataset showed greater fold-to-fold variation. Overall, the results demonstrate that classifier performance is jointly determined by model flexibility, dataset size, and the underlying structure of the features.
 
 ---
+
+## **Mean Test Accuracies (Aggregated Across Trials and Splits)**
+
+### **EEG Eye State**
+
+| Model               | Mean Accuracy |
+| ------------------- | ------------- |
+| Logistic Regression | ~0.63         |
+| SVM (RBF Kernel)    | ~0.90–0.93    |
+| Random Forest       | ~0.92–0.94    |
+| MLP                 | ~0.88–0.92    |
+
+### **BEED Epilepsy Detection**
+
+| Model               | Mean Accuracy |
+| ------------------- | ------------- |
+| Logistic Regression | ~0.90         |
+| SVM (RBF Kernel)    | ~0.96–0.98    |
+| Random Forest       | ~0.95–0.97    |
+| MLP                 | ~0.94–0.96    |
 
 ### **Parkinson’s Voice Dataset**
 
-| Model               | Mean Test Accuracy |
-| ------------------- | ------------------ |
-| Logistic Regression | ~0.83–0.85         |
-| SVM (RBF Kernel)    | ~0.88–0.91         |
-| Random Forest       | ~0.85–0.89         |
-| MLP                 | ~0.80–0.87         |
+| Model               | Mean Accuracy |
+| ------------------- | ------------- |
+| Logistic Regression | ~0.83–0.85    |
+| SVM (RBF Kernel)    | ~0.88–0.91    |
+| Random Forest       | ~0.85–0.89    |
+| MLP                 | ~0.80–0.87    |
 
----
+**Overall ranking:**
 
-### **Overall Cross-Dataset Model Ranking**
-
-| Rank | Model               |
-| ---- | ------------------- |
-| 1    | SVM (RBF Kernel)    |
-| 2    | Random Forest       |
-| 3    | MLP                 |
-| 4    | Logistic Regression |
+1. SVM (RBF Kernel)
+2. Random Forest
+3. MLP
+4. Logistic Regression
 
 ---
 
 ## **Requirements**
 
-The project uses the following Python packages:
+This project uses the following Python libraries:
 
 ```
 Python 3.8+
@@ -146,7 +136,7 @@ To install dependencies:
 pip install numpy pandas scikit-learn matplotlib seaborn ucimlrepo
 ```
 
-If running in Google Colab, all dependencies are available by default except `ucimlrepo`, which can be installed via:
+If running in Google Colab:
 
 ```
 !pip install ucimlrepo
@@ -154,42 +144,29 @@ If running in Google Colab, all dependencies are available by default except `uc
 
 ---
 
-## **How to Reproduce the Experiments**
+## **Reproducing the Experiments**
 
-1. Download datasets and place them in the `data/` folder, or upload them manually when running the notebooks in Google Colab.
-2. Open the desired notebook from the `notebooks/` directory.
-3. Adjust file paths as needed or mount Google Drive.
-4. Run all cells to perform preprocessing, hyperparameter tuning, training, and evaluation.
-5. Generated plots and summaries will be saved to the `plots/` and `results/` directories.
-
----
-
-## **Summary of Findings**
-
-* Nonlinear models (SVM-RBF, Random Forest, MLP) outperform Logistic Regression across all tasks.
-* Random Forest shows high stability across EEG datasets; SVM performs best on the Parkinson’s dataset.
-* Training size significantly affects performance, especially for SVM and MLP.
-* Cross-validation is a reliable predictor of test accuracy, except in small datasets such as Parkinson’s.
-
-A complete discussion of these findings is provided in the report.
+1. Download the datasets from UCI and place them into the `data/` directory, or upload them manually if using Colab.
+2. Open any of the notebooks in the `notebooks/` directory.
+3. Adjust dataset paths or mount Google Drive as needed.
+4. Execute the notebook to reproduce preprocessing, model training, hyperparameter tuning, and evaluation.
+5. Plots and summary files will be generated automatically and saved in `plots/` and `results/`.
 
 ---
 
 ## **Final Report**
 
-The full NeurIPS-style report is located in:
+The complete report, formatted in the NeurIPS template, is available at:
 
 ```
 /report/COGS118A_Final_Report.pdf
 ```
 
-It includes detailed methodology, results, plots, and interpretations.
-
 ---
 
 ## **References**
 
-* Caruana, R., & Niculescu-Mizil, A. (2006). *An Empirical Comparison of Supervised Learning Algorithms.* ICML.
-* Breiman, L. (2001). *Random Forests.* Machine Learning.
-* Pedregosa et al. (2011). *Scikit-Learn: Machine Learning in Python.* JMLR.
-* UCI Machine Learning Repository Datasets.
+Caruana, R., & Niculescu-Mizil, A. (2006). *An Empirical Comparison of Supervised Learning Algorithms.* ICML.
+Breiman, L. (2001). *Random Forests.* Machine Learning.
+Pedregosa et al. (2011). *Scikit-Learn: Machine Learning in Python.* JMLR.
+UCI Machine Learning Repository.
