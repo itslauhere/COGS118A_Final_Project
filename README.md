@@ -1,8 +1,8 @@
-# **README — COGS118A Final Project**
+# COGS118A Final Project
 
-**A Comparative Evaluation of Machine Learning Classifiers on Biomedical EEG and Voice Datasets**
-**Author:** Laurentia Liennart
-**Course:** COGS 118A — Supervised Machine Learning Algorithms 
+**A Comparative Evaluation of Machine Learning Classifiers on Biomedical EEG and Voice Datasets**  
+**Author:** Laurentia Liennart  
+**Course:** COGS 118A — Supervised Machine Learning Algorithms  
 University of California, San Diego
 
 ---
