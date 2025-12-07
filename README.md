@@ -17,13 +17,13 @@ This repository contains the implementation, analysis, and final report for a co
 ```
 COGS118A_Final_Project/
 │
-├── notebooks/
+├── Notebooks/
 │   ├── EEG_Eye_State.ipynb
 │   ├── BEED_Epilepsy.ipynb
 │   ├── Parkinsons.ipynb
 │   └── Comparison_Analysis.ipynb
 │
-├── plots/
+├── Plots/
 │   ├── eye_state_testacc_vs_trainsize.png
 │   ├── eye_state_cv_vs_testacc.png
 │   ├── beed_testacc_vs_trainsize.png
@@ -34,15 +34,15 @@ COGS118A_Final_Project/
 │   ├── combined_cv_vs_testacc.png
 │   └── model_comparison_across_datasets.png
 │
-├── results/
+├── Results/
 │   ├── eeg_eye_results_summary.csv
 │   ├── beed_results_summary.csv
 │   ├── pdcls_results_summary.csv
 │
-├── data/
+├── Data/
 │   └── README.md
 │
-├── report/
+├── Report/
 │   └── COGS118A_Final_Report.pdf
 │
 └── README.md
